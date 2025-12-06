@@ -1,5 +1,15 @@
 import csv
 
+def filter_high_scores(file_path):
+    with open(file_path, 'r') as file:
+        reader = csv.DictReader(file)
+        high_scores = [row for row in reader if int(row['score']) > 85]
+
+    print("People with scores > 85:")
+    for row in high_scores:
+        print(f"{row['name']} - {row['score']}")
+
+
 def read_and_process_csv(file_path):
     total_score = 0
     row_count = 0
@@ -17,3 +27,4 @@ def read_and_process_csv(file_path):
 
 if __name__ == "__main__":
     read_and_process_csv("data.csv")
+    filter_high_scores("data.csv")
