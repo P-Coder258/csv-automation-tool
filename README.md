@@ -1,4 +1,4 @@
-# Csv Automation Tool
+# CSV Automation Tool
 
 ## Features
 - Processes CSV files and calculates averages
